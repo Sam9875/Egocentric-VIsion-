@@ -96,7 +96,7 @@ python main.py \
     --predictor rnn
     
 You can change the predictor type to (rnn) in case you want to run the Glove by default its Bert  
-Just so you know, enable TensorBoard to visualize training loss over time.
+Note that you can enable TensorBoard to visualize the training loss over time.
 
 
 
@@ -140,7 +140,7 @@ EgoVLP — Lin et al., 2022
 
 Video-LLaVA — Lin et al., 2023
 
-
+(Some help was also taken from LLm models,Internet, and other Research Papers)
 
 # Acknowledgements
 This project was developed for the Egocentric Video Understanding course, with guidance from:
