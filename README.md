@@ -1,2 +1,2 @@
 # Egocentric-VIsion-
-Egocentric with vslnet and vslbase (Glove architecture/Bert)
+Egocentric with vslnet and vslbase (Glove/Bert)
