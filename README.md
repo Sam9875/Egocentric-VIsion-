@@ -95,7 +95,8 @@ python main.py \
     --fv omnivore \
     --predictor rnn
     
-    Optionally, enable TensorBoard to visualize training loss over time.
+You can change the predictor type to (rnn) in case you want to run the Glove by default its Bert  
+Just so you know, enable TensorBoard to visualize training loss over time.
 
 
 
