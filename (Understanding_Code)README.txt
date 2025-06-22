@@ -1,0 +1,86 @@
+README.txt (For understanding the code)
+
+---
+
+# Natural Language Queries in Egocentric Videos (Ego4D - NLQ Benchmark)
+
+##  Project Goal
+
+This project focuses on solving the **Natural Language Queries (NLQ)** task from the Ego4D dataset. The aim is to predict the relevant video segment for a given natural language query. For instance, a query like *“Where did I put the mug?”* must be answered by locating the start and end times within the egocentric video where this event occurs.
+
+---
+
+## Project Structure
+
+The codebase is organized into multiple components, including baseline implementations, dataset preparation, and one extension. Here's a breakdown:
+
+### Model Implementations
+We implemented and trained two models:
+- `VSLBase`: A baseline model using GloVe embeddings.
+- `VSLNet`: An enhanced version that includes a **Query-Guided Highlighting** mechanism.
+
+**NOTE** while working with vslbase we changed three files to convert it to vslbase (runner,main,vslnet) all the three files i have uploaded in the directory so while working with runtime you need to change the three wile to run your code with vslbase 
+
+Each model was evaluated using two different feature extractors:
+- **Omnivore features** (official Ego4D pre-extracted)
+- **EgoVLP features**
+
+So, in total, there are **6 different scripts** representing:
+1. Omnivore + VSLBase  
+2. Omnivore + VSLNet  
+3. Omnivore + GloVe  
+4. EgoVLP + VSLBase  
+5. EgoVLP + VSLNet  
+6. EgoVLP + GloVe
+
+> **Note:** These six scripts might look similar but differ in configurations, models used, and feature inputs. They also correspond to the **first two project steps** (before the extension and baseline comparisons).  
+> Some scripts save output files at the end (e.g., predictions and scores), while others don’t — **but all results are best understood by reading the final project report**, where everything is clearly described and compared.
+
+---
+
+### Extension Implementation
+
+- One file contains the **full implementation of Extension 2**:  
+  “From video interval to a textual answer.”
+
+This script includes:
+- Segment selection
+- Manual annotation of answers
+- Video segment extraction (via `ffmpeg`)
+- Inference using a VideoQA model (e.g., Video-LLaVA)
+- Result generation and qualitative+quantitative analysis
+
+The code is **well-commented and step-by-step** to help replicate the extension easily.
+
+---
+
+### Additional Resources
+
+- A **ZIP file** is included with:
+  - Results and predictions
+  - The 50 queries selected for Extension 2
+  - Final matched answers used for evaluation
+
+---
+
+##  Training & Evaluation
+
+- Training was conducted using pre-extracted features (Omnivore & EgoVLP).
+- Models used either **GloVe embeddings** or **BERT** for queries.
+- Loss includes standard localization loss and a highlight loss (weighted).
+- Metrics: **Recall@K** and **mIoU (mean Intersection over Union)**.
+- Checkpoints were saved and evaluated periodically.
+
+---
+
+##  Final Note
+
+For a complete understanding of the pipeline, experimental setup, and results:
+> ** Please refer to the final written report.**
+
+It provides:
+- Model comparisons
+- Config differences across the 6 runs
+- Visual examples from the extension
+- Explanation of how we finalized query-answer pairs
+- the model we used is mentioned in the report but can also be checked at extension2 file 
