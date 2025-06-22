@@ -1,8 +1,7 @@
-# Egocentric-VIsion-Natural Language Queries in Egocentric Videos (Ego4D NLQ)
+# Natural Language Queries in Egocentric Videos (Ego4D NLQ)
 This project focuses on answering natural language queries from egocentric videos, leveraging the Ego4D dataset and the VSLNet architecture. It supports both baseline training and extended methods such as using LLMs or VLMs for improved performance.
 
 ## Project Structure
-
 
 main.py — Core training and evaluation pipeline.
 
@@ -18,7 +17,6 @@ All models were trained on different sets of video features (Omnivore and EgoVLP
 (This version uses BERT instead of GloVe for textual embedding, improving contextual understanding of queries.)
 
 
-
 # Project Objective
 Given a natural language query and a video from the Ego4D dataset, the task is to localize the segment of the video that answers the query.
 
@@ -28,10 +26,9 @@ Examples:
 
 "How many frying pans can I see on the shelf?"
 
-The project follows the Ego4D NLQ benchmark and implements VSLBase and VSLNet, trained on pre-extracted features using Omnivore and EgoVLP.
+The project follows the Ego4D NLQ benchmark and implements VSLBase and VSLNet, trained on pre-extracted features using Omnivore and EgoVLP. 
 
-Extension Implementation
-- One file contains the **full implementation of Extension 2**:  
+As an extension, the project integrates NLQ into a video question answering (VideoQA) pipeline by using localized segments as input to a vision-language model to generate textual answers. A subset of qualitative and quantitative results is also presented to evaluate this approach.  
   
 
 # Installation
@@ -102,7 +99,7 @@ Note that you can enable TensorBoard to visualize the training loss over time.
 
 
 
- Extension
+# Extension
 We implemented Proposal 2: From video interval to a textual answer.
 
 After retrieving the correct video segment with NLQ, we used Video-LLaVA to generate direct textual answers based on the localized clip and the query.
