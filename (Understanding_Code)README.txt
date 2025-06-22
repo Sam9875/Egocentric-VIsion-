@@ -19,9 +19,9 @@ We implemented and trained two models:
 - `VSLBase`: A baseline model using GloVe embeddings.
 - `VSLNet`: An enhanced version that includes a **Query-Guided Highlighting** mechanism.
 
-**NOTE** while working with vslbase we changed three files to convert it to vslbase (runner,main,vslnet) all the three files i have uploaded in the directory so while working with runtime you need to change the three wile to run your code with vslbase 
+**NOTE** While working with vslbase, we changed three files to convert it to vslbase (runner, main,vslnet) All three files we have uploaded in the directory, so while working with runtime, you need to change the three while to run your code with vslbase 
 
-Each model was evaluated using two different feature extractors:
+Each model was trained using two different feature extractors:
 - **Omnivore features** (official Ego4D pre-extracted)
 - **EgoVLP features**
 
@@ -33,7 +33,7 @@ So, in total, there are **6 different scripts** representing:
 5. EgoVLP + VSLNet  
 6. EgoVLP + GloVe
 
-> **Note:** These six scripts might look similar but differ in configurations, models used, and feature inputs. They also correspond to the **first two project steps** (before the extension and baseline comparisons).  
+**Note:** Although these six scripts may appear similar, they differ in configuration, models used, and feature inputs. They also correspond to the **first two project steps** (before the extension and baseline comparisons).  
 > Some scripts save output files at the end (e.g., predictions and scores), while others don’t — **but all results are best understood by reading the final project report**, where everything is clearly described and compared.
 
 ---
@@ -50,7 +50,7 @@ This script includes:
 - Inference using a VideoQA model (e.g., Video-LLaVA)
 - Result generation and qualitative+quantitative analysis
 
-The code is **well-commented and step-by-step** to help replicate the extension easily.
+The code is well-commented and step-by-step, making it easy to replicate the extension.
 
 ---
 
@@ -81,6 +81,6 @@ For a complete understanding of the pipeline, experimental setup, and results:
 It provides:
 - Model comparisons
 - Config differences across the 6 runs
-- Visual examples from the extension
+- we used the graphs to compare the results (mentioned in the report)
 - Explanation of how we finalized query-answer pairs
-- the model we used is mentioned in the report but can also be checked at extension2 file 
+- The model we used is mentioned in the report, but can also be checked in the extension2 file 
