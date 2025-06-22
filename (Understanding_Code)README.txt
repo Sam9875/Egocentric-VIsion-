@@ -24,7 +24,7 @@ We implemented and trained two models:
 
 **NOTE** While working with vslbase, we changed three files to convert it to vslbase (runner, main,vslnet) All three files we have uploaded in the directory, so while working with runtime, you need to change the three while to run your code with vslbase 
 
-Each model was trained using two different feature extractors:
+Each model was trained using two different features:
 - **Omnivore features** (official Ego4D pre-extracted)
 - **EgoVLP features**
 
@@ -40,8 +40,18 @@ So, in total, there are **6 different scripts** representing:
 > Some scripts save output files at the end (e.g., predictions and scores), while others don’t — **but all results are best understood by reading the final project report**, where everything is clearly described and compared.
 
 ---
+##  Training & Evaluation of models.
+
+- Training was conducted using pre-extracted features (Omnivore & EgoVLP).
+- Models used either **GloVe embeddings** or **BERT** for queries.
+- Loss includes standard localization loss and a highlight loss (weighted).
+- Metrics: **Recall@K** and **mIoU (mean Intersection over Union)**.
+- Checkpoints were saved and evaluated periodically.
+
+---
 
 ### Extension Implementation
+
 
 - One file contains the **full implementation of Extension 2**:  
   “From video interval to a textual answer.”
@@ -52,10 +62,13 @@ This script includes:
 - Video segment extraction (via `ffmpeg`)
 - Inference using a VideoQA model (e.g., Video-LLaVA)
 - Result generation and qualitative+quantitative analysis
+- We have seen the result with some quantitative metrics (e.g. ROUGE or BLEU)
 
 The code is well-commented and step-by-step, making it easy to replicate the extension.
 
 ---
+
+
 
 ### Additional Resources
 
@@ -66,13 +79,7 @@ The code is well-commented and step-by-step, making it easy to replicate the ext
 
 ---
 
-##  Training & Evaluation
 
-- Training was conducted using pre-extracted features (Omnivore & EgoVLP).
-- Models used either **GloVe embeddings** or **BERT** for queries.
-- Loss includes standard localization loss and a highlight loss (weighted).
-- Metrics: **Recall@K** and **mIoU (mean Intersection over Union)**.
-- Checkpoints were saved and evaluated periodically.
 
 ---
 
