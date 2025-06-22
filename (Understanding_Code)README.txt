@@ -14,6 +14,9 @@ This project focuses on solving the **Natural Language Queries (NLQ)** task from
 
 The codebase is organized into multiple components, including baseline implementations, dataset preparation, and one extension. Here's a breakdown:
 
+##Analysis### Before diving into model development, we conducted an initial analysis of the Ego4D Natural Language Queries (NLQ) dataset as requested to better understand its structure and content. This included exploring the distribution of query templates to identify common linguistic patterns, analyzing the average duration of annotated clips along with their corresponding query and answer temporal segments, and examining how queries are distributed across various scenarios in the dataset. These exploratory steps, supported by visual plots, helped us gain valuable insights into the dataset’s characteristics and informed several design choices in the later stages of our project. 
+
+
 ### Model Implementations
 We implemented and trained two models:
 - `VSLBase`: A baseline model using GloVe embeddings.
@@ -81,6 +84,6 @@ For a complete understanding of the pipeline, experimental setup, and results:
 It provides:
 - Model comparisons
 - Config differences across the 6 runs
-- we used the graphs to compare the results (mentioned in the report)
+- We used the graphs to compare the results (mentioned in the report)
 - Explanation of how we finalized query-answer pairs
 - The model we used is mentioned in the report, but can also be checked in the extension2 file 
