@@ -30,7 +30,17 @@ Examples:
 
 The project follows the Ego4D NLQ benchmark and implements VSLBase and VSLNet, trained on pre-extracted features using Omnivore and EgoVLP.
 
+Extension Implementation
+- One file contains the **full implementation of Extension 2**:  
+  “From video interval to a textual answer.”
 
+This script includes:
+- Segment selection
+- Manual annotation of answers
+- Video segment extraction (via `ffmpeg`)
+- Inference using a VideoQA model (e.g., Video-LLaVA)
+- Result generation and qualitative+quantitative analysis
+- We have seen the result with some quantitative metrics (e.g. ROUGE or BLEU)
 
 # Installation
 Install the necessary libraries:
