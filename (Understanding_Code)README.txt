@@ -6,7 +6,9 @@ README.txt (For understanding the code)
 
 ##  Project Goal
 
-This project focuses on solving the **Natural Language Queries (NLQ)** task from the Ego4D dataset. The aim is to predict the relevant video segment for a given natural language query. For instance, a query like *“Where did I put the mug?”* must be answered by locating the start and end times within the egocentric video where this event occurs.
+This project focuses on solving the **Natural Language Queries (NLQ)** task from the Ego4D dataset. The aim is to predict the relevant video segment for a given natural language query. For instance, a query like *“Where did I put the mug?”* must be answered by locating the start and end times within the egocentric video where this event occurs. 
+As an extension, the project integrates NLQ into a video question answering (VideoQA) pipeline by using localized segments as input to a vision-language model to generate textual answers. A subset of qualitative and quantitative results is also presented to evaluate this approach.  
+  
 
 ---
 
@@ -14,7 +16,8 @@ This project focuses on solving the **Natural Language Queries (NLQ)** task from
 
 The codebase is organized into multiple components, including baseline implementations, dataset preparation, and one extension. Here's a breakdown:
 
-##Analysis### Before diving into model development, we conducted an initial analysis of the Ego4D Natural Language Queries (NLQ) dataset as requested to better understand its structure and content. This included exploring the distribution of query templates to identify common linguistic patterns, analyzing the average duration of annotated clips along with their corresponding query and answer temporal segments, and examining how queries are distributed across various scenarios in the dataset. These exploratory steps, supported by visual plots, helped us gain valuable insights into the dataset’s characteristics and informed several design choices in the later stages of our project. 
+##Analysis
+Before diving into model development, we conducted an initial analysis of the Ego4D Natural Language Queries (NLQ) dataset as requested to better understand its structure and content. This included exploring the distribution of query templates to identify common linguistic patterns, analyzing the average duration of annotated clips along with their corresponding query and answer temporal segments, and examining how queries are distributed across various scenarios in the dataset. These exploratory steps, supported by visual plots, helped us gain valuable insights into the dataset’s characteristics and informed several design choices in the later stages of our project. 
 
 
 ### Model Implementations
@@ -22,11 +25,11 @@ We implemented and trained two models:
 - `VSLBase`: A baseline model using GloVe embeddings.
 - `VSLNet`: An enhanced version that includes a **Query-Guided Highlighting** mechanism.
 
-**NOTE** While working with vslbase, we changed three files to convert it to vslbase (runner, main,vslnet) All three files we have uploaded in the directory, so while working with runtime, you need to change the three while to run your code with vslbase 
+**NOTE** While working with VSLbase, we changed three files to convert it to VSLbase (runner, main,VSLnet) All three files we have uploaded in the directory, so while working with runtime, you need to change the three while to run your code with VSLbase 
 
-Each model was trained using two different features:
-- **Omnivore features** (official Ego4D pre-extracted)
-- **EgoVLP features**
+Each model was trained using pre-extracted features of models like:
+- **Omnivore** (official Ego4D pre-extracted)
+- **EgoVLP**
 
 So, in total, there are **6 different scripts** representing:
 1. Omnivore + VSLBase  
@@ -52,7 +55,6 @@ So, in total, there are **6 different scripts** representing:
 
 ### Extension Implementation
 
-
 - One file contains the **full implementation of Extension 2**:  
   “From video interval to a textual answer.”
 
@@ -61,8 +63,8 @@ This script includes:
 - Manual annotation of answers
 - Video segment extraction (via `ffmpeg`)
 - Inference using a VideoQA model (e.g., Video-LLaVA)
-- Result generation and qualitative+quantitative analysis
-- We have seen the result with some quantitative metrics (e.g. ROUGE or BLEU)
+- Result generation and qualitative + quantitative analysis
+- evaluation metric: ROUGE or BLEU
 
 The code is well-commented and step-by-step, making it easy to replicate the extension.
 
@@ -79,10 +81,6 @@ The code is well-commented and step-by-step, making it easy to replicate the ext
 
 ---
 
-
-
----
-
 ##  Final Note
 
 For a complete understanding of the pipeline, experimental setup, and results:
@@ -92,5 +90,7 @@ It provides:
 - Model comparisons
 - Config differences across the 6 runs
 - We used the graphs to compare the results (mentioned in the report)
-- Explanation of how we finalized query-answer pairs
+- Explanation of how we finalized query-answer pairs (extension implementation)
 - The model we used is mentioned in the report, but can also be checked in the extension2 file 
+
+
