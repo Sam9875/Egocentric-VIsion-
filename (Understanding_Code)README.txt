@@ -17,7 +17,7 @@ As an extension, the project integrates NLQ into a video question answering (Vid
 The codebase is organized into multiple components, including baseline implementations, dataset preparation, and one extension. Here's a breakdown:
 
 ##Analysis
-Before diving into model development, we conducted an initial analysis of the Ego4D Natural Language Queries (NLQ) dataset as requested to better understand its structure and content. This included exploring the distribution of query templates to identify common linguistic patterns, analyzing the average duration of annotated clips along with their corresponding query and answer temporal segments, and examining how queries are distributed across various scenarios in the dataset. These exploratory steps, supported by visual plots, helped us gain valuable insights into the dataset’s characteristics and informed several design choices in the later stages of our project. 
+Before we dive into model development, we conducted an initial analysis of the Ego4D Natural Language Queries (NLQ) dataset as requested to better understand its structure and content. This included exploring the distribution of query templates to identify common linguistic patterns, analyzing the average duration of annotated clips along with their corresponding query and answer temporal segments, and examining how queries are distributed across various scenarios in the dataset. These exploratory steps, supported by visual plots, helped us gain valuable insights into the dataset’s characteristics and informed several design choices in the later stages of our project. 
 
 
 ### Model Implementations
@@ -38,7 +38,7 @@ So, in total, there are **6 different scripts** representing:
 4. EgoVLP + VSLBase  
 5. EgoVLP + VSLNet  
 6. EgoVLP + GloVe
-
+(The scripts are there in the respective folders )
 **Note:** Although these six scripts may appear similar, they differ in configuration, models used, and feature inputs. They also correspond to the **first two project steps** (before the extension and baseline comparisons).  
 > Some scripts save output files at the end (e.g., predictions and scores), while others don’t — **but all results are best understood by reading the final project report**, where everything is clearly described and compared.
 
